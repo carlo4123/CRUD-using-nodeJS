@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: #e4fcf9;
+  
+    }
+    .main{
+        height: 100vh;
+        display: flex;
+
+  justify-content: center;
+  background-color: #446491;
+    }
+    table{
+        margin-top: 100px;
+        border-radius: 10px;
+    width: 80%;
+        background-color: #4b89ac;
+     
+    }
+    th{
+        background-color: #446491;
+     
+    }
+    tr{
+        height: 50px;
+    
+    }
+    td{
+    padding: 10px;
+    border-bottom: 1px solid black ;
+    }
+    .CTA{
+        text-align: center;
+        width: 100px;
+    }
+    .btn-edit{
+        background-color: #446491 ;
+        border: 0;
+        width: 60px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .btn-delete{
+        background-color: red ;
+        border: 0;
+        width: 60px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .btn-add{
+        position: relative;
+        top: 50px;
+        left: 60px;
+        background-color: #4b89ac ;
+        border: 0;
+        width: 60px;
+        height: 40px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    a{
+    text-decoration: none;
+    }
+</style>
+<body>
+    <div class="main">
+      
+        <button class="btn-add"><a href="/insert">ADD</a></button>
+
+    <table >
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th> 
+          <th>Email</th>
+          <th>Age</th>
+          <th>Address</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+            <% shows.forEach((show)=>{ %> 
+          <td><%= show.FName %> </td>
+          <td><%= show.LName %> </td>
+          <td><%= show.email %> </td>
+          <td><%= show.age %> </td>
+          <td><%= show.address %> </td>
+          <td class="CTA" ><a href="/edit/<%=show.id%>" class="btn-edit">EDIT</a></td>
+          <td class="CTA"><a href="/delete/<%=show.id%>" class="btn-delete">DELETE</a></td>
+        </tr>
+        <% }) %> 
+        <!-- <tr>
+          <td>Eve</td>
+          <td>Jackson</td>
+          <td>94</td>
+          <td>Smith</td>
+          <td>50</td>
+          <td class="CTA" ><button class="btn-edit">EDIT</button></td>
+          <td class="CTA"><button class="btn-delete">Delete</button></td>
+        </tr>
+        <tr>
+          <td>John</td>
+          <td>Doe</td>
+          <td>80</td>
+          <td>Smith</td>
+          <td>50</td>
+          <td class="CTA" ><button class="btn-edit">EDIT</button></td>
+          <td class="CTA"><button class="btn-delete">Delete</button></td>
+        </tr> -->
+      </table>
+    </div>
+</body>
+</html>
